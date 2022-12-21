@@ -13,7 +13,7 @@ screenCap.startCapture()
 while True:
 
     frame = screenCap.getCapture()
-    cv.imshow('Juniper Berry Baron', screenCap.getCapture())
+    cv.imshow('Juniper Berry Baron', frame)
     print(f'FPS {format(1 / (time() - loopTime))}')
     loopTime = time()
 
