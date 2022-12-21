@@ -5,8 +5,8 @@ class ScreenCapture:
     camera = None
 
     # constructor
-    def __init__(self, window_name):
-        self.camera = dxcam.create(output_color="BGR")
+    def __init__(self, monitor):
+        self.camera = dxcam.create(output_color="BGR", output_idx=monitor)
 
     def startCapture(self):
 

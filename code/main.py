@@ -3,16 +3,17 @@ import cv2 as cv
 from screencapture import ScreenCapture
 from time import time
 
-
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
-screenCap = ScreenCapture('Maple')
+
+# initialize capture object and passing monitor 1
+screenCap = ScreenCapture(0)
 loopTime = time()
 screenCap.startCapture()
 
 while True:
 
     frame = screenCap.getCapture()
-    cv.imshow('Juniper Berry Baron', frame)
+    cv.imshow('Juniper Berry Baron', screenCap.getCapture())
     print(f'FPS {format(1 / (time() - loopTime))}')
     loopTime = time()
 
@@ -21,8 +22,4 @@ while True:
         screenCap.stopCapture()
         break
 
-
 print("Exited")
-
-
-
